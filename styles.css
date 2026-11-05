@@ -24,7 +24,7 @@
 .gt-lab { font-size: var(--font-ui-smaller); color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
 .gt-live { font-size: var(--font-ui-smaller); color: var(--text-muted); }
 .gt-seg { display: inline-flex; border: 1px solid var(--background-modifier-border); border-radius: var(--radius-s); overflow: hidden; }
-.gt-view .gt-seg button { box-shadow: none; background-color: var(--background-primary); cursor: pointer; border: 0; border-radius: 0; height: var(--input-height); padding: 0 var(--size-4-3); background: var(--background-primary); color: var(--text-muted); font-size: var(--font-ui-small); cursor: pointer; }
+.gt-view .gt-seg button { box-shadow: none; background-color: var(--background-primary); border: 0; border-radius: 0; height: var(--input-height); padding: 0 var(--size-4-3); color: var(--text-muted); font-size: var(--font-ui-small); cursor: pointer; }
 .gt-view .gt-seg button + button { border-left: 1px solid var(--background-modifier-border); }
 .gt-view .gt-seg button[aria-pressed="true"] { background-color: var(--interactive-accent); color: var(--text-on-accent); }
 .gt-view .gt-btn, .gt-view select { height: var(--input-height); padding: 0 var(--size-4-3); border: 1px solid var(--background-modifier-border); border-radius: var(--radius-s); background-color: var(--background-primary); color: var(--text-normal); box-shadow: none; font-size: var(--font-ui-small); cursor: pointer; }
@@ -108,7 +108,11 @@
 .gt-fill { position: absolute; top: 0; bottom: 0; left: 0; width: var(--gt-d); background: var(--gt-c); }
 .gt-bar:focus-visible, .gt-ms:focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 1px; }
 .gt-bar.gt-sel { outline: 2px solid var(--text-normal); outline-offset: 1px; }
-.gt-sum { position: absolute; left: var(--gt-l); width: var(--gt-w); top: calc((var(--gt-rh) - 9px) / 2); height: 9px; background: var(--gt-c); opacity: 0.9; clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - 6px) 55%, 6px 55%, 0 100%); }
+.gt-sum { position: absolute; left: var(--gt-l); width: var(--gt-w); top: calc((var(--gt-rh) - 9px) / 2); height: 5px; background: var(--gt-c); opacity: 0.9; }
+/* The small ticks at the ends of a summary bar are drawn with borders. */
+.gt-sum::before, .gt-sum::after { content: ""; position: absolute; top: 100%; width: 0; height: 0; border-top: 4px solid var(--gt-c); }
+.gt-sum::before { left: 0; border-right: 5px solid transparent; }
+.gt-sum::after { right: 0; border-left: 5px solid transparent; }
 .gt-ms { position: absolute; left: var(--gt-l); top: calc((var(--gt-rh) - 14px) / 2); width: 14px; height: 14px; transform: rotate(45deg); border-radius: 2px; background: var(--gt-c); cursor: pointer; }
 .gt-ms.gt-sel { outline: 2px solid var(--text-normal); outline-offset: 2px; }
 .gt-after { position: absolute; left: var(--gt-l); top: 0; height: var(--gt-rh); display: flex; align-items: center; gap: var(--size-4-2); font-family: var(--font-monospace); font-size: 11px; color: var(--text-faint); white-space: nowrap; pointer-events: none; }

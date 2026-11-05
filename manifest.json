@@ -1,7 +1,7 @@
 {
   "id": "ganttable",
   "name": "Ganttable",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "minAppVersion": "1.13.0",
   "description": "Gantt chart from a Markdown table: WBS rollups, dependencies, critical path, drag to edit, print preview and SVG or PNG export. Works for project plans and study plans.",
   "author": "Joshuva",
